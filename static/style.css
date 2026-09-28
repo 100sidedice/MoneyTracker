@@ -1,0 +1,167 @@
+body {
+    background: #29093b;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "resources commissions todo-list"
+        "resources product todo-list";
+}
+* {
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+    background: #4c155a;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5rem solid #b98ac5;
+    h1 {
+        color: #c998c6;
+        text-align: center;
+        margin: 0;
+        padding: 1rem;
+    }
+    #total-profit {
+        color: #e6b515;
+    }
+}
+#resources {
+    grid-area: resources;
+}
+#commissions {
+    grid-area: commissions;
+}
+#product {
+    grid-area: product;
+}
+#todo-list {
+    grid-area: todo-list;
+}
+section {
+    background: #602170;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    border: 0.5rem solid #b98ac5;
+    h2 {
+        justify-content: center;
+        text-align: center;
+        color: #ddb7db;
+        border-bottom: 0.25rem solid #e6b515;
+        margin: 0 0 0.75rem 0;
+        padding: 0.5rem;
+    }
+    details {
+        background: #3f114b;
+        border-radius: 0.25rem;
+        border: 0.25rem solid #b98ac5;
+        &:open {
+            border: 0.25rem solid #7c4b88;
+            summary {
+                margin-bottom: 0.5rem;
+            }
+        }
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        summary {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #ddb7db;
+            cursor: pointer;
+            outline: none;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            &:hover {
+                background: #5d206d;
+                transform: scale(1.01);
+            }
+            transition: 0.1s transform ease;
+            &:active {
+                cursor: grabbing;
+                transform: scale(0.98);
+            }
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            div {
+                display: flex;
+                gap: 0.5rem;
+            }
+        }
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 0.25rem solid #b98ac5;
+        td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 0.125rem solid #62306e;
+            color: #e6b515;
+            &[contenteditable="true"]:focus {
+                background: #6b3c77;
+            }
+        }
+        th{
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 0.25rem solid #b98ac5;
+            color: #ddb7db;
+            text-align: center;
+            background: #4c155a;
+        }
+        th:not(:last-child) {
+            border-right: 0.125rem solid #b98ac5;
+        }
+        td:not(:last-child) {
+            border-right: 0.125rem solid #b98ac5;
+        }
+    }
+}
+button {
+    background: #703180;
+    color: #d8b8d6;
+    border-radius: 0.25rem;
+    border: 0.2rem solid #b98ac5;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+    &:hover {
+        background: #5d206d;
+        transform: scale(1.01);
+    }
+    transition: 0.1s transform ease;
+    &:active {
+        cursor: grabbing;
+        transform: scale(0.98);
+    }
+    z-index: 5;
+}
+.remove-button-confirm {
+    background: #e61515;
+    &:hover {
+        background: #ff0000;
+        transform: scale(1.01);
+    }
+    &:active {
+        cursor: grabbing;
+        background: #6e1111;
+        color: #d8b8d6;
+        transform: scale(0.98);
+    }
+    color: #000000;
+}

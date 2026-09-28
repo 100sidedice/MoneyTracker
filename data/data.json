@@ -1,0 +1,11 @@
+{
+  "resources": {
+    "nFep": {
+      "stock": "0",
+      "price": "15",
+      "needed": "1",
+      "incoming": "1",
+      "spent": "13.49"
+    }
+  }
+}
