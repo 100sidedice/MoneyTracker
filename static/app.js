@@ -114,6 +114,30 @@ function updateResouces(data){
         details.appendChild(table);
         resourcesSection.appendChild(details);
     }
+
+    // add button
+    const addButton = document.createElement("button");
+    addButton.textContent = "Add";
+    addButton.addEventListener("click", async () => {
+        // Add new resource
+        const newResource = {
+            stock: "",
+            price: "",
+            needed: "",
+            incoming: "",
+            spent: ""
+        };
+        // prompt name 
+        const name = prompt("Enter the name of the new resource:");
+        if (name) {
+            data.resources[name] = newResource;
+        } else {
+            data.resources["newResource"] = newResource;
+        }
+        await saveData(data);
+        updateResouces(data);
+    });
+    resourcesSection.appendChild(addButton);
 }
 document.addEventListener("DOMContentLoaded", async () => {
     const data = await loadData();

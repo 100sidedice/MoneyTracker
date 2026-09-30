@@ -3,9 +3,16 @@
     "nFep": {
       "stock": "0",
       "price": "15",
-      "needed": "1",
-      "incoming": "1",
+      "needed": "0",
+      "incoming": "0",
       "spent": "13.49"
+    },
+    "printer": {
+      "stock": "1",
+      "price": "100",
+      "needed": "",
+      "incoming": "",
+      "spent": "100"
     }
   }
 }
